@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom'; // 1. Link import kar liya
+import { Link } from 'react-router-dom';
 
 export default function Products() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    // 2. Live Vercel backend URL yahan laga diya
-    axios.get('https://e-commerce-abc-2617.vercel.app/api/products')
+    // Railway live backend URL update kar diya hai
+    axios.get('https://ecommerce-production-7cb1.up.railway.app/api/products')
       .then(response => {
         setProducts(response.data);
       })
@@ -22,7 +22,6 @@ export default function Products() {
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {products.map(product => (
-          // 3. Har card ko <Link> se wrap kar diya taake click karne par detail page khul jaye
           <Link 
             key={product.id} 
             to={`/product/${product.id}`} 

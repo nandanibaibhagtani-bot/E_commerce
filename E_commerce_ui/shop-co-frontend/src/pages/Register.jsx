@@ -16,8 +16,8 @@ export default function Register() {
     setError('');
 
     try {
-      // Live Vercel backend URL yahan update kar diya hai
-      await axios.post('https://e-commerce-abc-2617.vercel.app/api/auth/register', {
+      // Railway live backend URL update kar diya hai
+      await axios.post('https://ecommerce-production-7cb1.up.railway.app/api/auth/register', {
         name,
         email,
         password
